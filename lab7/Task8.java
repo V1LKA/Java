@@ -1,0 +1,32 @@
+package lab7;
+
+import java.util.Random;
+
+public class Task8 {
+
+    public static void main(String[] args) {
+
+        int[][] A = new int[12][6];
+        Random rand = new Random();
+
+        for (int i = 0; i < 12; i++) {
+            for (int j = 0; j < 6; j++) {
+                A[i][j] = rand.nextInt(21) - 10;
+            }
+        }
+
+        for (int j = 0; j < 6; j++) {
+
+            int product = 1;
+
+            for (int i = 0; i < 12; i++) {
+
+                if (A[i][j] < 0) {
+                    product *= A[i][j];
+                }
+            }
+
+            System.out.println("Произведение отрицательных элементов столбца " + j + ": " + product);
+        }
+    }
+}
